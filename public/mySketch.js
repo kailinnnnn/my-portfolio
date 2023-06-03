@@ -29,10 +29,10 @@ function setup() {
 function draw() {
   clear();
 
-  for (let s = 0; s < strings.length; s++) {
-    strings[s].move();
-    strings[s].display();
-  }
+  strings.forEach((str) => {
+    str.move();
+    str.display();
+  });
 }
 
 function windowResized() {
@@ -42,12 +42,12 @@ function windowResized() {
 class MovingString {
   constructor(tx) {
     this.x = tx;
-    this.stringLength = int(random(minStringLength, maxStringLength));
+    this.length = int(random(minStringLength, maxStringLength));
     this.characters = [];
-    for (let i = 0; i < this.stringLength; i++) {
+    for (let i = 0; i < this.length; i++) {
       this.characters[i] = characterSet[int(random(characterSet.length))];
     }
-    this.currentY = int(random(-this.stringLength * 2, -this.stringLength));
+    this.currentY = int(random(-this.length * 2, -this.length));
     this.speed = int(random(minSpeed, maxSpeed));
     this.updateFrequency = int(random(1, 3));
   }
@@ -55,19 +55,20 @@ class MovingString {
   move() {
     if (frameCount % this.speed === 0) {
       this.currentY++;
-      for (let i = 0; i < this.stringLength - 1; i++) {
+      for (let i = 0; i < this.length - 1; i++) {
         this.characters[i] = this.characters[i + 1];
-        if (int(random(10)) === this.updateFrequency)
+        if (int(random(10)) === this.updateFrequency) {
           this.characters[i] = characterSet[int(random(characterSet.length))];
+        }
       }
-      this.characters[this.stringLength - 1] =
+      this.characters[this.length - 1] =
         characterSet[int(random(characterSet.length))];
     }
   }
 
   display() {
     fill(stringColor);
-    for (let i = 0; i < this.stringLength - 1; i++) {
+    for (let i = 0; i < this.length - 1; i++) {
       text(
         this.characters[i],
         this.x,
@@ -77,9 +78,9 @@ class MovingString {
 
     fill(leadColor);
     text(
-      this.characters[this.stringLength - 1],
+      this.characters[this.length - 1],
       this.x,
-      ((this.currentY + this.stringLength - 1) * charSize) % height
+      ((this.currentY + this.length - 1) * charSize) % height
     );
   }
 }
