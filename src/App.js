@@ -114,7 +114,7 @@ function App() {
             className="opensea projectdiv"
           >
             <div className="image">
-              <video src="/img/opensea.mp4" loop autoPlay></video>
+              <img src="/img/opensea.gif" loop autoPlay></img>
             </div>
             <div className="content">
               <span className="title">Opensea.io | Fork</span>
