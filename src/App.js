@@ -33,7 +33,7 @@ function App() {
               exprienceRef.current.scrollIntoView({ behavior: "smooth" })
             }
           >
-            exprience
+            experience
           </li>
           <li
             onClick={() =>
