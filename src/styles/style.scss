@@ -6,8 +6,6 @@
 @font-face {
   font-family: "SF Pro";
   src: url("/public/fonts/SF-Pro.ttf") format("truetype");
-  // font-weight: normal;
-  // font-style: normal;
 }
 
 a {
@@ -29,7 +27,6 @@ ul {
     width: 100vw;
     height: 100%;
     border: none;
-    // opacity: 0.5;
     background-color: #171923;
   }
   header {
@@ -46,6 +43,9 @@ ul {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(20px);
     transition: background-color 0.2s ease; /* 添加过渡属性和持续时间 */
+    @media (max-width: 414px) {
+      display: none;
+    }
 
     &:hover {
       background-color: rgb(255, 255, 255, 0.15);
@@ -68,6 +68,9 @@ ul {
         i {
           margin-left: 5px;
         }
+        a {
+          color: rgb(233, 237, 244);
+        }
       }
     }
   }
@@ -75,13 +78,18 @@ ul {
     width: 100vw;
     height: calc(100vh - 70px);
     color: rgb(233, 237, 244);
-    // background-color: #171923;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: translateY(10%);
+
     @media (max-width: 912px) {
+      height: calc(100vh - 5rem);
       flex-direction: column;
+      padding: 5rem 0;
+    }
+    @media (max-width: 414px) {
+      padding: 5rem 2rem;
     }
 
     p {
@@ -91,6 +99,12 @@ ul {
         text-align: center;
         font-size: 42px;
         margin-right: 0px;
+      }
+      @media (max-width: 414px) {
+        font-size: 24px;
+        br {
+          display: none;
+        }
       }
     }
     img {
@@ -124,6 +138,14 @@ ul {
     opacity: 1;
     color: white;
     padding: 70px 0px 70px 140px;
+    @media (max-width: 1024px) {
+      padding-left: 5rem;
+    }
+    @media (max-width: 414px) {
+      width: 100vw;
+      padding: 70px 2rem;
+      align-items: center;
+    }
 
     .expriencetitle {
       font-size: 32px;
@@ -137,19 +159,14 @@ ul {
       display: flex;
       align-items: center;
       margin-top: 40px;
-      // @media (max-width: 912px) {
-      //   flex-direction: column;
-      // }
+
       .logo {
         width: 100px;
         height: 100px;
         min-width: 100px;
         min-height: 100px;
         margin-right: 30px;
-        // @media (max-width: 912px) {
-        //   width: 250px;
-        //   height: 250px;
-        // }
+
         img {
           width: 100%;
           height: 100%;
@@ -167,19 +184,10 @@ ul {
         .title {
           font-size: 21px;
           font-weight: 600;
-          // @media (max-width: 912px) {
-          //   display: flex;
-          //   flex-direction: column;
-          //   // font-size: 32px;
-          //   margin-top: 2rem;
-          // }
           .date {
             font-size: 12px;
             font-weight: 400;
             color: rgb(233, 237, 244, 0.75);
-            // @media (max-width: 912px) {
-            //   font-size: 24px;
-            // }
           }
         }
         .category {
@@ -203,25 +211,31 @@ ul {
     padding: 70px 0px 70px 140px;
     border-radius: 15px;
     background-color: rgb(23, 25, 35, 0.5);
+    @media (max-width: 1024px) {
+      padding-left: 5rem;
+    }
     @media (max-width: 912px) {
       align-items: center;
       gap: 3rem;
-      padding: 0px;
+      padding: 0px 0px 70px 0px;
+      .project {
+        flex-direction: column;
+        gap: 3rem;
+      }
     }
 
     span {
       font-size: 32px;
       margin-bottom: 20px;
+      @media (max-width: 912px) {
+        font-size: 42px;
+        margin-bottom: 0;
+      }
     }
     .project {
       display: flex;
       align-items: center;
       width: calc(100% - 70px);
-
-      @media (max-width: 912px) {
-        flex-direction: column;
-        gap: 3rem;
-      }
 
       .projectdiv {
         width: 30vw;
@@ -233,11 +247,15 @@ ul {
         background-color: #1a202c;
         transition: transform 0.1s ease;
         color: rgb(233, 237, 244);
+
         @media (max-width: 912px) {
           flex-direction: column;
           align-items: center;
           margin-right: 0px;
           height: 400px;
+        }
+        @media (max-width: 414px) {
+          scale: 0.9;
         }
 
         &:hover {
@@ -285,25 +303,60 @@ ul {
 
   .contect {
     // background-color: #1a202c;
+    width: 100vw;
     color: white;
     padding: 0px 140px 35px 140px;
     background-color: rgb(23, 25, 35, 0.5);
     @media (max-width: 912px) {
       gap: 1rem;
+      .contectword {
+        font-size: 42px;
+      }
+      .main {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        .link {
+          margin: 2rem 0;
+        }
+      }
+    }
+    @media (max-width: 414px) {
+      align-items: center;
+      padding: 2rem;
     }
     .contectword {
       font-size: 32px;
       margin-bottom: 20px;
+      @media (max-width: 414px) {
+        padding-bottom: 3rem;
+      }
     }
     .main {
+      width: 100%;
       display: flex;
       align-items: end;
       justify-content: flex-end;
       margin-bottom: 35px;
+      @media (max-width: 912px) {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+      }
+      @media (max-width: 414px) {
+        flex-direction: column;
+        align-items: center;
+      }
 
       .link {
+        width: 100%;
         display: flex;
         align-items: center;
+        @media (max-width: 912px) {
+          gap: 1rem;
+        }
+        @media (max-width: 414px) {
+          flex-direction: column;
+          margin: 2rem 0;
+        }
 
         a {
           display: flex;
@@ -317,6 +370,14 @@ ul {
           backdrop-filter: blur(20px);
           transition: background-color 0.2s ease;
           flex-wrap: nowrap;
+          cursor: pointer;
+          @media screen and (max-width: 912px) {
+            margin-right: 0;
+          }
+          @media (max-width: 414px) {
+            width: 80%;
+          }
+
           &:hover {
             background-color: rgb(255, 255, 255, 0.2);
           }
@@ -333,11 +394,5 @@ ul {
         width: 210px;
       }
     }
-    // p {
-    //   width: auto;
-    //   text-align: center;
-    //   color: rgb(255, 255, 255, 0.1);
-    //   padding-top: 20px;
-    // }
   }
 }

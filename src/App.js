@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+
 import { Link } from "react-router-dom";
 import "./styles/style.css";
 
@@ -49,8 +50,13 @@ function App() {
             contect
           </li>
           <li>
-            resume
-            <i class="fa-solid fa-download"></i>
+            <a
+              href="https://drive.google.com/file/d/1ibfRsG7SItuG0U-hKCbWsW6yZTn4OARM/view?usp=drive_link"
+              download
+            >
+              resume
+              <i className="fa-solid fa-download"></i>
+            </a>
           </li>
         </ul>
       </header>
@@ -161,10 +167,13 @@ function App() {
               <span>Github</span>
             </Link>
 
-            <Link to="/github">
+            <a
+              href="https://drive.google.com/file/d/1ibfRsG7SItuG0U-hKCbWsW6yZTn4OARM/view?usp=drive_link"
+              download
+            >
               <i class="fa-solid fa-download"></i>
               <span>Resume</span>
-            </Link>
+            </a>
           </div>
 
           <img src="/img/call.png" alt="" />

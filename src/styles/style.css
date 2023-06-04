@@ -48,6 +48,11 @@ ul {
           backdrop-filter: blur(20px);
   transition: background-color 0.2s ease; /* 添加过渡属性和持续时间 */
 }
+@media (max-width: 414px) {
+  .App header {
+    display: none;
+  }
+}
 .App header:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
@@ -71,6 +76,9 @@ ul {
 .App header ul li i {
   margin-left: 5px;
 }
+.App header ul li a {
+  color: rgb(233, 237, 244);
+}
 .App .about {
   width: 100vw;
   height: calc(100vh - 70px);
@@ -82,7 +90,14 @@ ul {
 }
 @media (max-width: 912px) {
   .App .about {
+    height: calc(100vh - 5rem);
     flex-direction: column;
+    padding: 5rem 0;
+  }
+}
+@media (max-width: 414px) {
+  .App .about {
+    padding: 5rem 2rem;
   }
 }
 .App .about p {
@@ -94,6 +109,14 @@ ul {
     text-align: center;
     font-size: 42px;
     margin-right: 0px;
+  }
+}
+@media (max-width: 414px) {
+  .App .about p {
+    font-size: 24px;
+  }
+  .App .about p br {
+    display: none;
   }
 }
 .App .about img {
@@ -126,6 +149,18 @@ ul {
   opacity: 1;
   color: white;
   padding: 70px 0px 70px 140px;
+}
+@media (max-width: 1024px) {
+  .App .exprience {
+    padding-left: 5rem;
+  }
+}
+@media (max-width: 414px) {
+  .App .exprience {
+    width: 100vw;
+    padding: 70px 2rem;
+    align-items: center;
+  }
 }
 .App .exprience .expriencetitle {
   font-size: 32px;
@@ -189,27 +224,36 @@ ul {
   border-radius: 15px;
   background-color: rgba(23, 25, 35, 0.5);
 }
+@media (max-width: 1024px) {
+  .App .projects {
+    padding-left: 5rem;
+  }
+}
 @media (max-width: 912px) {
   .App .projects {
     align-items: center;
     gap: 3rem;
-    padding: 0px;
+    padding: 0px 0px 70px 0px;
+  }
+  .App .projects .project {
+    flex-direction: column;
+    gap: 3rem;
   }
 }
 .App .projects span {
   font-size: 32px;
   margin-bottom: 20px;
 }
+@media (max-width: 912px) {
+  .App .projects span {
+    font-size: 42px;
+    margin-bottom: 0;
+  }
+}
 .App .projects .project {
   display: flex;
   align-items: center;
   width: calc(100% - 70px);
-}
-@media (max-width: 912px) {
-  .App .projects .project {
-    flex-direction: column;
-    gap: 3rem;
-  }
 }
 .App .projects .project .projectdiv {
   width: 30vw;
@@ -228,6 +272,11 @@ ul {
     align-items: center;
     margin-right: 0px;
     height: 400px;
+  }
+}
+@media (max-width: 414px) {
+  .App .projects .project .projectdiv {
+    scale: 0.9;
   }
 }
 .App .projects .project .projectdiv:hover {
@@ -268,6 +317,7 @@ ul {
   background: rgba(49, 151, 149, 0.45);
 }
 .App .contect {
+  width: 100vw;
   color: white;
   padding: 0px 140px 35px 140px;
   background-color: rgba(23, 25, 35, 0.5);
@@ -276,20 +326,66 @@ ul {
   .App .contect {
     gap: 1rem;
   }
+  .App .contect .contectword {
+    font-size: 42px;
+  }
+  .App .contect .main {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .App .contect .main .link {
+    margin: 2rem 0;
+  }
+}
+@media (max-width: 414px) {
+  .App .contect {
+    align-items: center;
+    padding: 2rem;
+  }
 }
 .App .contect .contectword {
   font-size: 32px;
   margin-bottom: 20px;
 }
+@media (max-width: 414px) {
+  .App .contect .contectword {
+    padding-bottom: 3rem;
+  }
+}
 .App .contect .main {
+  width: 100%;
   display: flex;
   align-items: end;
   justify-content: flex-end;
   margin-bottom: 35px;
 }
+@media (max-width: 912px) {
+  .App .contect .main {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 414px) {
+  .App .contect .main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .App .contect .main .link {
+  width: 100%;
   display: flex;
   align-items: center;
+}
+@media (max-width: 912px) {
+  .App .contect .main .link {
+    gap: 1rem;
+  }
+}
+@media (max-width: 414px) {
+  .App .contect .main .link {
+    flex-direction: column;
+    margin: 2rem 0;
+  }
 }
 .App .contect .main .link a {
   display: flex;
@@ -304,6 +400,17 @@ ul {
           backdrop-filter: blur(20px);
   transition: background-color 0.2s ease;
   flex-wrap: nowrap;
+  cursor: pointer;
+}
+@media screen and (max-width: 912px) {
+  .App .contect .main .link a {
+    margin-right: 0;
+  }
+}
+@media (max-width: 414px) {
+  .App .contect .main .link a {
+    width: 80%;
+  }
 }
 .App .contect .main .link a:hover {
   background-color: rgba(255, 255, 255, 0.2);
